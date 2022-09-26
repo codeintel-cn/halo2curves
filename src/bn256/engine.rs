@@ -59,6 +59,24 @@ impl PairingCurveAffine for G2Affine {
 #[derive(Copy, Clone, Debug, Default)]
 pub struct Gt(pub(crate) Fq12);
 
+impl eccgpu::PairingCurveAffine for G1Affine {
+    type Pair = G2Affine;
+    type PairingResult = Gt;
+
+    fn pairing_with(&self, other: &Self::Pair) -> Self::PairingResult {
+        pairing(self, other)
+    }
+}
+
+impl eccgpu::PairingCurveAffine for G2Affine {
+    type Pair = G1Affine;
+    type PairingResult = Gt;
+
+    fn pairing_with(&self, other: &Self::Pair) -> Self::PairingResult {
+        pairing(other, self)
+    }
+}
+
 impl std::fmt::Display for Gt {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{:?}", self)

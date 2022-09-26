@@ -12,7 +12,7 @@ mod assembly;
 pub use curve::*;
 pub use engine::*;
 pub use fq::*;
-use fq2::*;
+pub use fq2::*;
 pub use fr::*;
 
 #[derive(Debug, PartialEq)]
