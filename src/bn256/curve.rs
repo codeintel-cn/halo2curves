@@ -52,19 +52,19 @@ impl CurveAffineExt for G2Affine {
     batch_add!();
 }
 
-#[cfg(feature = "gpu")]
-impl ec_gpu::GpuName for G1Affine {
-    fn name() -> String {
-        ec_gpu::name!()
-    }
-}
+// #[cfg(feature = "gpu")]
+// impl ec_gpu::GpuName for G1Affine {
+//     fn name() -> String {
+//         ec_gpu::name!()
+//     }
+// }
 
-#[cfg(feature = "gpu")]
-impl ec_gpu::GpuName for G2Affine {
-    fn name() -> String {
-        ec_gpu::name!()
-    }
-}
+// #[cfg(feature = "gpu")]
+// impl ec_gpu::GpuName for G2Affine {
+//     fn name() -> String {
+//         ec_gpu::name!()
+//     }
+// }
 
 const G1_GENERATOR_X: Fq = Fq::one();
 const G1_GENERATOR_Y: Fq = Fq::from_raw([2, 0, 0, 0]);

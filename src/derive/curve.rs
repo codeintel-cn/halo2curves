@@ -216,6 +216,12 @@ macro_rules! new_curve_impl {
             }
         }
 
+        impl ec_gpu::GpuName for $name_affine {
+            fn name() -> String {
+                ec_gpu::name!()
+            }
+        }
+
         // Compressed
 
         impl std::fmt::Debug for $name_compressed {

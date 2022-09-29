@@ -22,7 +22,7 @@ ark-std = { version = "0.3", features = ["print-trace"] }
 subtle = "2.4"
 ff = "0.12.0"
 group = "0.12.0"
-pasta_curves = "0.4.0"
+pasta_curves = { path = "../pasta_curves" }
 static_assertions = "1.1.0"
 eccgpu = { package = "pairing", version = "0.22.0" }
 rand = "0.8"
